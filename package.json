@@ -1,0 +1,9 @@
+{
+  "name": "LivioxFrontendBoilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt-include-replace": "~0.1.0",
+    "grunt-contrib-clean": "~0.4.0"
+  }
+}
