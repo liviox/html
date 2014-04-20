@@ -2,7 +2,6 @@ module.exports = function(grunt) {
 
     // Задачи
     grunt.initConfig({
-        // Склеиваем
         concat: {
             main: {
                 src: [
@@ -12,6 +11,12 @@ module.exports = function(grunt) {
                 dest: 'production/js/scripts.js'
             }
         },
+        csso: {
+            dist: {
+                src: 'src/css/*',
+                dest:'production/css/screen.min.css'
+            }
+        },
         uglify: {
             main: {
                 files: {
@@ -19,27 +24,29 @@ module.exports = function(grunt) {
                 }
             }
         },
-	    copy: {
-			main: {
-				files: [
-					{expand: true, cwd: 'src/', src: ['*.html'], dest: 'production/'},
-					{expand: true, cwd: 'src/img/', src: ['**'], dest: 'production/img'},
-					{expand: true, cwd: 'src/css', src: ['**'], dest: 'production/css'}
-				]
-			}
-		},
-		clean: {
-			dev: ["production/_*.html", "production/css/lib", "production/css"],
-			release: ["production/*",]
-		}
+        copy: {
+            main: {
+                files: [
+                    {expand: true, cwd: 'src/', src: ['*.html'], dest: 'production/'},
+                    //{expand: true, cwd: 'src/css', src: ['**'], dest: 'production/css'},
+                    {expand: true, cwd: 'src/img/', src: ['**'], dest: 'production/img'}
+                    
+                ]
+            }
+        },
+        clean: {
+            dev: ["production/_*.html", "production/css/lib", "production/css"],
+            release: ["production/*",]
+        }
     });
 
     // Загрузка плагинов, установленных с помощью npm install
+    grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Задача по умолчанию
-    grunt.registerTask('default', ['clean','concat', 'uglify', 'copy']);
+    grunt.registerTask('default', ['clean','concat', 'uglify', 'csso', 'copy']);
 };
