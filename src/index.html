@@ -4,7 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1"/>
-	
+	<link rel="shortcut icon" href="ico/favicon.ico" />
+
 	<title>TITLE</title>
 	
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
@@ -12,11 +13,55 @@
 </head>
 <body>
 
-<!-- BEGIN  out-->
-<div class="out">
+<!-- BEGIN  header-->
+<header>
+	<nav>
+		<ul>
+			<li><a href="#">Link 1</a></li>
+			<li><a href="#">Link 2</a></li>
+			<li><a href="#">Link 3</a></li>
+			<li><a href="#">Link 4</a></li>
+			<li><a href="#">Link 5</a></li>
+		</ul>
+	</nav>
+</header>
+<!-- END header-->
 
+<!-- BEGIN  container-->
+<div class="container">
+	<article>
+		<h1>Title</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	</article>
 </div>
-<!-- END out-->
+<!-- END container-->
+
+<!-- BEGIN  footer-->
+<footer>
+	<div itemscope itemtype="http://schema.org/Organization">
+		<span itemprop="name">Google.org (GOOG)</span>
+		Contact Details:
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			Main address:
+			<span itemprop="streetAddress">38 avenue de l'Opera</span>
+			<span itemprop="postalCode">F-75002</span>
+			<span itemprop="addressLocality">Paris, France</span>,
+		</div>
+		Tel: <span itemprop="telephone">( 33 1) 42 68 53 00 </span>,
+		Fax: <span itemprop="faxNumber">( 33 1) 42 68 53 01 </span>,
+		E-mail: <span itemprop="email">secretariat(at)google.org</span>
+		Members:
+		- National Scientific Members in 100 countries and territories: Country1, Country2, ...
+		- Scientific Union Members, 30 organizations listed in this Yearbook:
+		<span itemprop="member" itemscope itemtype="http://schema.org/Organization">Member1</span>,
+		<span itemprop="member" itemscope itemtype="http://schema.org/Organization">Member2</span>,
+		History:
+	</div> 
+	&copy; Оформление сайта. ООО «Рога и копыта», 2014
+</footer>
+<!-- END footer-->
+
+
 
 </body>
 </html>
